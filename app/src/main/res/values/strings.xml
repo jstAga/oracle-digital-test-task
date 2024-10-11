@@ -1,4 +1,11 @@
 <resources>
   <string name="app_name">MovieApp</string>
   <string name="hello_blank_fragment">Hello blank fragment</string>
+
+  <!--Content description-->
+  <string name="film_poster">Film poster</string>
+  <string name="film_rating">Film rating</string>
+  <string name="film_genre">Film genre</string>
+  <string name="film_release">Film release year</string>
+  <string name="film_duration">Film duration</string>
 </resources>
