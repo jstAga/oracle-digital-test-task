@@ -1,26 +1,78 @@
 [versions]
-agp = "8.6.0"
-kotlin = "1.9.0"
-coreKtx = "1.13.1"
+
+# Plugins
+agp = "8.6.1"
+kotlin = "2.0.20"
+
+# Dependencies
+ktx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.2.1"
+junitAndroid = "1.2.1"
 espressoCore = "3.6.1"
+fragment = "1.8.4"
+lifecycle = "2.8.6"
+hilt = "2.51.1"
+gson = "2.11.0"
+navigation = "2.8.2"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.9.2"
 constraintlayout = "2.1.4"
-
+swiperefreshlayout = "1.2.0-alpha01"
+viewpager2 = "1.1.0"
+flexbox = "3.0.0"
+glide = "4.16.0"
+glideTransformations = "4.3.0"
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+# Core
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+
+# Architecture components
+androidx-activity = { group = "androidx.activity", name = "activity", version = "activity" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
+
+# UI
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
-[plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# Glide
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }
 
+# ViewPager2
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+
+# Navigation components
+androidx-navigation-runtime-ktx = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigation" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+# Hilt
+dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# Gson
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
+# Testings
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitAndroid" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+[plugins]
+# Kotlin & Gradle
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# Navigation saveargs
+androidx-navigation-saveargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
+
+# Dagger hilt
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
