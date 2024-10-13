@@ -19,6 +19,8 @@ android {
     versionName = "1.0"
     
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+    buildConfigField("String", "API_KEY", "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYjRmMjVlZDA2ZDk1ZTVjMmNhNGQ0Njk1NDcwYTBkZCIsIm5iZiI6MTcyODYxOTAzMC4xOTc0MjMsInN1YiI6IjY0YTUxNDNkNWE5OTE1MDBlM2M4NDIyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Fj_Bc_43at3nfzG1OjKAyyoHZwboWnJn_-tK3pEZeG8\"")
   }
   
   buildTypes {
@@ -36,6 +38,7 @@ android {
   }
   
   buildFeatures {
+    buildConfig = true
     viewBinding = true
   }
 }
@@ -69,8 +72,14 @@ dependencies {
   implementation(libs.dagger.hilt.android)
   kapt(libs.dagger.hilt.compiler)
   
-  // Gson
-  implementation(libs.gson)
+  // Remote
+  implementation(libs.retrofit)
+  implementation(libs.converter.gson)
+  implementation(libs.okhttp3.okhttp)
+  implementation(libs.logging.interceptor)
+  
+  // Paging3
+  implementation(libs.androidx.paging.runtime.ktx)
   
   // Testings
   testImplementation(libs.junit)

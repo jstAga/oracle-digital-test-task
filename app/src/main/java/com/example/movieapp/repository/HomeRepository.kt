@@ -1,6 +1,22 @@
 package com.example.movieapp.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import com.example.movieapp.core.base.ui.BaseRepository
+import com.example.movieapp.data.paging.MoviePagingSource
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor() {
+class HomeRepository @Inject constructor(
+  private val moviePagingSource: MoviePagingSource
+) : BaseRepository() {
+  
+  fun getFilms() = Pager(
+    config = PagingConfig(
+      pageSize = 30,
+      prefetchDistance = 10
+    ),
+    pagingSourceFactory = {
+      moviePagingSource
+    }
+  ).flow
 }

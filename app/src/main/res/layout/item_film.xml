@@ -3,7 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
+  android:layout_height="wrap_content"
   tools:background="@color/blue_gray">
 
   <com.google.android.material.imageview.ShapeableImageView
@@ -13,10 +13,10 @@
     android:layout_marginStart="28dp"
     android:layout_marginTop="24dp"
     android:contentDescription="@string/film_poster"
+    android:src="@color/gray"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:shapeAppearanceOverlay="@style/RoundedCorners"
-    tools:src="@color/black" />
+    app:shapeAppearanceOverlay="@style/RoundedCorners" />
 
   <TextView
     android:id="@+id/tvTitle"

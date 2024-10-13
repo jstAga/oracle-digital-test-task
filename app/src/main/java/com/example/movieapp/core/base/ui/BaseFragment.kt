@@ -1,14 +1,21 @@
-package com.example.movieapp.core.base
+package com.example.movieapp.core.base.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
+import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 
 abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel> : BottomSheetDialogFragment() {
@@ -63,4 +70,22 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel> : 
   protected open fun initRequest() {}
   protected open fun initListeners() {}
   protected open fun initSubscribers() {}
+  
+  fun safeFlowGather(
+    lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
+    gather: suspend () -> Unit,
+  ) {
+    viewLifecycleOwner.lifecycleScope.launch {
+      viewLifecycleOwner.repeatOnLifecycle(lifecycleState) {
+        gather()
+      }
+    }
+  }
+  
+  protected fun <T : Any> Flow<PagingData<T>>.collectPaging(
+    lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
+    action: suspend (value: PagingData<T>) -> Unit,
+  ) {
+    safeFlowGather(lifecycleState) { this.collectLatest { action(it) } }
+  }
 }
