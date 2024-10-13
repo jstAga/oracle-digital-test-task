@@ -2,6 +2,7 @@ package com.example.movieapp.data.model
 
 import com.example.movieapp.core.base.data.IBaseDiffModel
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class MovieModel(
   val adult: Boolean,
@@ -12,8 +13,6 @@ data class MovieModel(
   override val id: Int,
   @SerializedName("original_language")
   val originalLanguage: String,
-  @SerializedName("original_Title")
-  val originalTitle: String,
   val overview: String,
   val popularity: Float,
   @SerializedName("poster_path")
@@ -26,4 +25,4 @@ data class MovieModel(
   val voteAverage: Float,
   @SerializedName("vote_count")
   val voteCount: Int,
-) : IBaseDiffModel<Int>
+) : IBaseDiffModel<Int>, Serializable

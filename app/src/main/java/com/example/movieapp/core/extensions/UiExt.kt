@@ -8,16 +8,23 @@ import com.example.movieapp.R
 
 fun ImageView.load(
   url: String,
-  width: Int,
-  height: Int,
-  placeholder: Int = R.color.gray
+  placeholder: Int = R.color.gray,
+  optimizePicture : Boolean = true
 ) {
-  Glide.with(this)
-    .load(url)
-    .fitCenter()
-    .override(width, height)
-    .placeholder(placeholder)
-    .downsample(DownsampleStrategy.CENTER_INSIDE)
-    .diskCacheStrategy(DiskCacheStrategy.DATA)
-    .into(this)
+  if (optimizePicture){
+    Glide.with(this)
+      .load(url)
+      .fitCenter()
+      .override(width, height)
+      .placeholder(placeholder)
+      .downsample(DownsampleStrategy.CENTER_INSIDE)
+      .diskCacheStrategy(DiskCacheStrategy.DATA)
+      .into(this)
+  } else {
+    Glide.with(this)
+      .load(url)
+      .override(width, height)
+      .placeholder(placeholder)
+      .into(this)
+  }
 }

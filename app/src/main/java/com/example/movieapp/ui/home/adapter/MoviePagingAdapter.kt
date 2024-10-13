@@ -41,7 +41,7 @@ class MoviePagingAdapter(
     
     fun bind(model: MovieModel) = with(binding) {
       val poster = Constant.IMAGE_BASE_URL + model.posterPath
-      ivPoster.load(poster, 92, 120)
+      ivPoster.load(poster)
       tvTitle.text = model.title
       tvRating.text = model.voteAverage.toString()
       tvRelease.text = model.releaseData
