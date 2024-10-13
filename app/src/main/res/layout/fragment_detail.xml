@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".DetailFragment">
+  android:background="@color/blue_gray"
+  tools:context=".ui.detail.DetailFragment">
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
+  <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/hello_blank_fragment" />
+    android:layout_height="wrap_content">
 
-</FrameLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+      android:id="@+id/ivBackdrop"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:src="@color/gray"
+      app:layout_constraintTop_toTopOf="parent"
+      app:shapeAppearanceOverlay="@style/BottomRoundedCorners" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+      android:id="@+id/ivPoster"
+      android:layout_width="92dp"
+      android:layout_height="120dp"
+      android:layout_marginStart="28dp"
+      app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+      app:layout_constraintStart_toStartOf="parent"
+      app:shapeAppearanceOverlay="@style/RoundedCorners"
+      tools:src="@color/black" />
+
+    <TextView
+      android:id="@+id/tvTitle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:layout_marginTop="12dp"
+      android:layout_marginEnd="28dp"
+      android:maxLines="2"
+      android:minLines="2"
+      android:textColor="@color/white"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/ivPoster"
+      app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
+      tools:text="Spiderman No Way Home" />
+
+    <LinearLayout
+      android:id="@+id/layoutInfo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:gravity="center_horizontal"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+      <TextView
+        android:id="@+id/tvRelease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/light_gray"
+        android:textColor="@color/light_gray"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_calendar_blank"
+        app:layout_constraintBottom_toBottomOf="@id/ivRelease"
+        app:layout_constraintStart_toEndOf="@id/ivRelease"
+        app:layout_constraintTop_toTopOf="@id/ivRelease"
+        tools:text="2021" />
+
+      <com.google.android.material.divider.MaterialDivider
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_marginHorizontal="20dp"
+        app:dividerColor="@color/gray" />
+
+      <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:textColor="@color/orange"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_star"
+        tools:text="9.5" />
+
+      <com.google.android.material.divider.MaterialDivider
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_marginHorizontal="20dp"
+        app:dividerColor="@color/gray" />
+
+      <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/light_gray"
+        android:textColor="@color/light_gray"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_ticket"
+        app:layout_constraintBottom_toBottomOf="@id/ivGenre"
+        app:layout_constraintStart_toEndOf="@id/ivGenre"
+        app:layout_constraintTop_toTopOf="@id/ivGenre"
+        tools:text="Action" />
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/tvAboutMovie"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="@string/about_movie"
+      android:textColor="@color/white"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="@id/ivPoster"
+      app:layout_constraintTop_toBottomOf="@id/layoutInfo" />
+
+    <TextView
+      android:id="@+id/tvDescription"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:textColor="@color/white"
+      app:layout_constraintEnd_toEndOf="@id/tvTitle"
+      app:layout_constraintStart_toStartOf="@id/tvAboutMovie"
+      app:layout_constraintTop_toBottomOf="@id/tvAboutMovie"
+      tools:text="@string/lorem_description" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
