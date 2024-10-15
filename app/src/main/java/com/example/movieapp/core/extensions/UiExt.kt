@@ -1,6 +1,8 @@
 package com.example.movieapp.core.extensions
 
+import android.content.Context
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
@@ -27,4 +29,8 @@ fun ImageView.load(
       .placeholder(placeholder)
       .into(this)
   }
+}
+
+fun ImageView.setDrawable(context : Context, drawable: Int) {
+  this.setImageDrawable(ContextCompat.getDrawable(context, drawable))
 }

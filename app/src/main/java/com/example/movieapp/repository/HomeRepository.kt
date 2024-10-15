@@ -3,11 +3,11 @@ package com.example.movieapp.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.example.movieapp.core.base.ui.BaseRepository
-import com.example.movieapp.data.paging.MoviePagingSource
+import com.example.movieapp.data.paging.MovieRemotePagingSource
 import javax.inject.Inject
 
 class HomeRepository @Inject constructor(
-  private val moviePagingSource: MoviePagingSource
+  private val moviePagingSource: MovieRemotePagingSource
 ) : BaseRepository() {
   
   fun getFilms() = Pager(

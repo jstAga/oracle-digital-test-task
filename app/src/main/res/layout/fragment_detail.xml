@@ -14,11 +14,12 @@
     <com.google.android.material.imageview.ShapeableImageView
       android:id="@+id/ivBackdrop"
       android:layout_width="match_parent"
-      android:scaleType="centerCrop"
       android:layout_height="200dp"
+      android:scaleType="centerCrop"
       android:src="@color/gray"
       app:layout_constraintTop_toTopOf="parent"
-      app:shapeAppearanceOverlay="@style/BottomRoundedCorners" />
+      app:shapeAppearanceOverlay="@style/BottomRoundedCorners"
+      tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.imageview.ShapeableImageView
       android:id="@+id/ivPoster"
@@ -29,6 +30,16 @@
       app:layout_constraintStart_toStartOf="parent"
       app:shapeAppearanceOverlay="@style/RoundedCorners"
       tools:src="@color/black" />
+
+    <ImageView
+      android:id="@+id/icSave"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="12dp"
+      android:src="@drawable/ic_save"
+      app:layout_constraintBottom_toBottomOf="@id/tvAboutMovie"
+      app:layout_constraintEnd_toEndOf="@id/tvTitle"
+      app:layout_constraintTop_toTopOf="@id/tvAboutMovie" />
 
     <TextView
       android:id="@+id/tvTitle"

@@ -12,8 +12,10 @@ import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
+import com.example.movieapp.core.base.data.UIState
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -78,6 +80,28 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel> : 
     viewLifecycleOwner.lifecycleScope.launch {
       viewLifecycleOwner.repeatOnLifecycle(lifecycleState) {
         gather()
+      }
+    }
+  }
+  
+  protected fun <T> StateFlow<UIState<T>>.collectUIState(
+    uiState: ((UIState<T>) -> Unit)? = null,
+    onLoading: (() -> Unit?)? = null,
+    onSuccess: (data: T) -> Unit,
+  ) {
+    viewLifecycleOwner.lifecycleScope.launch {
+      repeatOnLifecycle(Lifecycle.State.STARTED) {
+        this@collectUIState.collect { state ->
+          uiState?.invoke(state)
+          when (state) {
+            is UIState.Idle -> {}
+            is UIState.Error -> {}
+            is UIState.Loading -> {}
+            is UIState.Success -> {
+              onSuccess(state.data)
+            }
+          }
+        }
       }
     }
   }

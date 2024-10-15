@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.movieapp.core.base.ui.BaseFragment
+import com.example.movieapp.core.extensions.buildNavOptions
+import com.example.movieapp.core.extensions.safeNavigate
 import com.example.movieapp.data.model.MovieModel
 import com.example.movieapp.databinding.FragmentHomeBinding
 import com.example.movieapp.ui.home.adapter.MoviePagingAdapter
@@ -26,7 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
   }
   
   private fun onClick(model: MovieModel) {
-    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(model = model))
-//    navigateSafely(HomeFragmentDirections.actionHomeFragmentToDetailFragment(model))
+    findNavController().safeNavigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(model = model), buildNavOptions())
   }
 }
