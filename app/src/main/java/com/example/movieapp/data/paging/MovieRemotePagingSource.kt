@@ -8,5 +8,5 @@ import javax.inject.Inject
 class MovieRemotePagingSource @Inject constructor(
   private val apiService: ApiService
 ) : BaseRemotePagingSource<MovieModel>({
-  apiService.getFilms(page = it)
+  apiService.getMovies(page = it)
 })

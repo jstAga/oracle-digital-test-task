@@ -12,7 +12,7 @@ import retrofit2.http.Query
 interface ApiService {
   
   @GET("discover/movie")
-  suspend fun getFilms(
+  suspend fun getMovies(
     @Query("page") page: Int,
     @Header("Authorization") token: String = "Bearer ${BuildConfig.API_KEY}"
   ): Response<PagingResponse<MovieModel>>

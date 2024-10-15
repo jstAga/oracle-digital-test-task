@@ -1,5 +1,6 @@
 package com.example.movieapp.core.extensions
 
+import android.content.Context
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -14,6 +15,10 @@ fun Fragment.fetchColor(id: Int): Int {
 
 fun Fragment.showToast(message: String?) {
   context?.let { Toast.makeText(it, message, Toast.LENGTH_SHORT).show() }
+}
+
+fun Fragment.showToast(resourceId: Int) {
+  context?.let { Toast.makeText(it, context?.stringResource(resourceId), Toast.LENGTH_SHORT).show() }
 }
 
 fun Fragment.setStatusBarColor(color: Int, animate: Boolean = true) {
@@ -43,3 +48,5 @@ fun buildNavOptions(): NavOptions {
     .setRestoreState(true)
     .build()
 }
+
+fun Context.stringResource(resourceId: Int): String = ContextCompat.getString(this, resourceId)

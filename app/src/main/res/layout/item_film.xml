@@ -31,91 +31,45 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@id/ivPoster"
     app:layout_constraintTop_toTopOf="@id/ivPoster"
-    tools:text="Spiderman" />
-
-  <ImageView
-    android:id="@+id/ivRating"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:contentDescription="@string/film_rating"
-    android:src="@drawable/ic_star"
-    app:layout_constraintStart_toStartOf="@id/tvTitle"
-    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+    tools:text="Batman" />
 
   <TextView
     android:id="@+id/tvRating"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
+    android:layout_marginTop="8dp"
+    android:drawablePadding="4dp"
     android:textColor="@color/orange"
     android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="@id/ivRating"
-    app:layout_constraintStart_toEndOf="@id/ivRating"
-    app:layout_constraintTop_toTopOf="@id/ivRating"
+    app:drawableStartCompat="@drawable/ic_star"
+    app:layout_constraintStart_toStartOf="@id/tvTitle"
+    app:layout_constraintTop_toBottomOf="@id/tvTitle"
     tools:text="9.5" />
-
-  <ImageView
-    android:id="@+id/ivGenre"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="4dp"
-    android:contentDescription="@string/film_genre"
-    android:src="@drawable/ic_ticket"
-    app:layout_constraintStart_toStartOf="@id/tvTitle"
-    app:layout_constraintTop_toBottomOf="@id/ivRating" />
-
-  <TextView
-    android:id="@+id/tvGenre"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:textColor="@color/white"
-    app:layout_constraintBottom_toBottomOf="@id/ivGenre"
-    app:layout_constraintStart_toEndOf="@id/ivGenre"
-    app:layout_constraintTop_toTopOf="@id/ivGenre"
-    tools:text="Action" />
-
-  <ImageView
-    android:id="@+id/ivRelease"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="4dp"
-    android:contentDescription="@string/film_release"
-    android:src="@drawable/ic_calendar_blank"
-    app:layout_constraintStart_toStartOf="@id/tvTitle"
-    app:layout_constraintTop_toBottomOf="@id/ivGenre" />
 
   <TextView
     android:id="@+id/tvRelease"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
+    android:layout_marginTop="4dp"
+    android:drawablePadding="4dp"
     android:textColor="@color/white"
-    app:layout_constraintBottom_toBottomOf="@id/ivRelease"
-    app:layout_constraintStart_toEndOf="@id/ivRelease"
-    app:layout_constraintTop_toTopOf="@id/ivRelease"
+    app:drawableStartCompat="@drawable/ic_calendar_blank"
+    app:layout_constraintStart_toStartOf="@id/tvRating"
+    app:layout_constraintTop_toBottomOf="@id/tvRating"
     tools:text="2021" />
 
-  <ImageView
-    android:id="@+id/ivDuration"
-    android:layout_width="wrap_content"
+  <TextView
+    android:id="@+id/tvDescription"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
-    android:contentDescription="@string/film_duration"
-    android:src="@drawable/ic_clock"
-    app:layout_constraintStart_toStartOf="@id/tvTitle"
-    app:layout_constraintTop_toBottomOf="@id/ivRelease" />
-
-  <TextView
-    android:id="@+id/tvDuration"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
+    android:layout_marginEnd="28dp"
+    android:ellipsize="end"
+    android:maxLines="2"
     android:textColor="@color/white"
-    app:layout_constraintBottom_toBottomOf="@id/ivDuration"
-    app:layout_constraintStart_toEndOf="@id/ivDuration"
-    app:layout_constraintTop_toTopOf="@id/ivDuration"
-    tools:text="139 min" />
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@id/tvRelease"
+    app:layout_constraintTop_toBottomOf="@id/tvRelease"
+    tools:text="@string/lorem_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

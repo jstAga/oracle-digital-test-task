@@ -53,12 +53,12 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
       viewModel.isMovieSaved(navArgs.model.id)
       Log.e("aga1", "${movie.title} is saved")
     }
-    
+
     viewModel.deleteMovieState.collectUIState {
       viewModel.isMovieSaved(navArgs.model.id)
       Log.e("aga1", "${movie.title} is deleted")
     }
-    
+
     viewModel.isMovieSavedState.collectUIState { isSaved ->
       this.isSaved = isSaved
       val drawableResource = if (isSaved) {

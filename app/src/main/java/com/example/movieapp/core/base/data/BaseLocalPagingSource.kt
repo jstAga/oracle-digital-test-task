@@ -17,8 +17,8 @@ abstract class BaseLocalPagingSource<Value : Any>(
       Log.e("aga1", "localLoad: $data")
       LoadResult.Page(
         data = data,
-        prevKey = null,
-        nextKey = position + 1
+        prevKey = if (position == 0) null else position - 1,
+        nextKey = if (data.isEmpty()) null else position + 1
       )
     } catch (exception: Exception) {
       Log.e("PagingException", "Exception: ${exception.message}")

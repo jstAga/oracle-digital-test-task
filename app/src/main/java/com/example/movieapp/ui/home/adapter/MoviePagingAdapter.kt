@@ -9,6 +9,7 @@ import com.example.movieapp.core.extensions.load
 import com.example.movieapp.core.utils.Constant
 import com.example.movieapp.data.model.MovieModel
 import com.example.movieapp.databinding.ItemFilmBinding
+import kotlin.math.ceil
 
 class MoviePagingAdapter(
   private val onClick: (MovieModel) -> Unit
@@ -40,12 +41,13 @@ class MoviePagingAdapter(
     RecyclerView.ViewHolder(binding.root) {
     
     fun bind(model: MovieModel) = with(binding) {
+      val rating = (ceil(model.voteAverage * 10) / 10).toString()
       val poster = Constant.IMAGE_BASE_URL + model.posterPath
       ivPoster.load(poster)
       tvTitle.text = model.title
-      tvRating.text = model.voteAverage.toString()
+      tvRating.text = rating
       tvRelease.text = model.releaseData
-      tvDuration.text = model.popularity.toString()
+      tvDescription.text = model.overview
       itemView.setOnClickListener {
         onClick(model)
       }

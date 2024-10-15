@@ -10,7 +10,7 @@ class HomeRepository @Inject constructor(
   private val moviePagingSource: MovieRemotePagingSource
 ) : BaseRepository() {
   
-  fun getFilms() = Pager(
+  fun getMovies() = Pager(
     config = PagingConfig(
       pageSize = 30,
       prefetchDistance = 10

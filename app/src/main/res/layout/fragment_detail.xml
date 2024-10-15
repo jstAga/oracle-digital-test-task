@@ -77,9 +77,6 @@
         android:textSize="16sp"
         app:drawableStartCompat="@drawable/ic_calendar_blank"
         app:drawableTint="@color/light_gray"
-        app:layout_constraintBottom_toBottomOf="@id/ivRelease"
-        app:layout_constraintStart_toEndOf="@id/ivRelease"
-        app:layout_constraintTop_toTopOf="@id/ivRelease"
         tools:text="2021" />
 
       <com.google.android.material.divider.MaterialDivider

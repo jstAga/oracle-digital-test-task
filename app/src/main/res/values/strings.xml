@@ -8,7 +8,13 @@
   <string name="film_genre">Film genre</string>
   <string name="film_release">Film release year</string>
   <string name="film_duration">Film duration</string>
+  <string name="error_content_description">Content error</string>
+
+  <string name="about_movie">About Movie</string>
+  <string name="watch_list">Watch list</string>
+  <string name="all_movies">All Movies</string>
+  <string name="all_movies_is_empty">You may have a poor internet connection or the server has run out of requests.</string>
+  <string name="there_is_no_movie_yet">There is no movie yet!</string>
 
   <string name="lorem_description">Lorem ipsum odor amet, consectetuer adipiscing elit. Pellentesque magnis platea etiam molestie suspendisse feugiat egestas diam integer. Dui fermentum quis consectetur euismod justo est eu feugiat. Bibendum orci viverra etiam ultrices varius quisque neque. Quisque fusce sit; tempus proin mi ante. Justo fusce sit natoque cursus, commodo interdum fringilla. Urna eget consequat dolor tempor et metus torquent finibus. Erat turpis tortor velit sem rhoncus volutpat torquent lobortis accumsan.\nOrnare aliquet metus turpis aenean phasellus interdum himenaeos. Lacus lectus fusce gravida nulla fringilla in eros. Venenatis augue ullamcorper inceptos hendrerit phasellus. Viverra sollicitudin molestie ultrices, enim sodales cursus. Tortor tincidunt inceptos sagittis tincidunt arcu eros. Morbi blandit sollicitudin neque tempus quisque; nec litora mollis. Torquent curae consectetur hac rutrum dapibus vulputate.\nMauris pharetra auctor diam magnis diam elementum. Laoreet consectetur ac nostra eleifend mus aptent adipiscing per curabitur. Neque augue dignissim etiam maximus porta maecenas. Facilisis efficitur penatibus facilisi ullamcorper aliquam integer. Lorem taciti mollis etiam eget sem cras nullam. Convallis tempus dignissim luctus vehicula ipsum euismod curae ridiculus. Massa dignissim ornare penatibus; nullam eros est. Et cras egestas vel ultricies commodo sit. Imperdiet tempor erat donec cras, elementum duis nisi.</string>
-  <string name="about_movie">About Movie</string>
 </resources>
